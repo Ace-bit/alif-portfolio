@@ -1,113 +1,135 @@
 import Image from "next/image";
+import { AcademicCapIcon, BriefcaseIcon, EnvelopeIcon, MapPinIcon } from "@heroicons/react/24/solid";
+import { Icon } from "@iconify/react";
+
+const logos = [
+  {icon:'logos:adobe-after-effects',size:'70%'},
+  {icon:'logos:adobe-premiere',size:'40%'},
+  {icon:'logos:adobe-photoshop',size:'15%'},
+  {icon:'logos:adobe-illustrator',size:'10%'},
+  {icon:'logos:nextjs-icon',size:'45%'},
+  {icon:'logos:laravel',size:'15%'},
+  {icon:'logos:tailwindcss-icon',size:'35%'},
+]
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
+    <div className="mx-0 md:mx-auto max-w-7xl p-2">
+      <div className="flex flex-wrap gap-8 mt-3">
+        {/* Me Section */}
+        <div className="flex flex-col lg:flex-row w-full items-center gap-2">
+          <div className="basis-full lg:basis-auto flex justify-center">
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+              src="/my-avatar.jpg"
+              width={400}
+              height={400}
+              alt="My Photo"
+              className="rounded-full"
             />
-          </a>
+          </div>
+          <div className="basis-full lg:basis-auto">
+            <p className="text-3xl lg:text-5xl text-center lg:text-left font-bold">Muhammad Alif Ramadhan</p>
+            <p className="text-lg lg:text-xl text-center lg:text-left font-medium">Motion Designer & Web Development</p>
+          </div>
         </div>
+        {/* Skill Section */}
+        <div className="flex flex-col md:flex-row-reverse w-full items-center gap-2">
+          <div className="basis-full md:basis-auto bg-black p-3 flex flex-col rounded-tr-3xl rounded-bl-3xl">
+            <p className="text-center md:text-left text-5xl font-bold mb-2">Skill</p>
+            <div className="flex flex-wrap md:flex-nowrap gap-2">
+              {logos.map((logo) => (
+              <div className="w-auto" key={logo.icon}>
+                <Icon icon={logo.icon} className="size-12 mb-1" />
+                <div className="w-full rounded-sm bg-white">
+                  <div className={`w-[${logo.size}] h-1 bg-green-700`}></div>
+                </div>
+              </div>
+              ))}
+              
+            </div>
+          </div>
+        </div>
+        {/* Timeline Section */}
+        <div className="flex flex-col md:flex-row w-full items-center gap-2">
+          <div className="basis-full md:basis-auto bg-black p-3 rounded-tl-3xl rounded-br-3xl">
+            <p className="text-center md:text-left text-5xl font-bold mb-2">Timeline</p>
+            <div className="ml-6 mt-6">
+              <ol className="relative border-s border-gray-700">
+                <li className="mb-10 ms-6">
+                  <span className="absolute flex items-center justify-center w-6 h-6 bg-green-800 rounded-full -start-3 ring-8 ring-green-800">
+                    <AcademicCapIcon />
+                  </span>
+                  <h3 className="flex items-center mb-1 text-xl font-semibold text-white">Vocational High School</h3>
+                  <p className="block mb-2 text-sm font-normal leading-none text-gray-500">2010-2013</p>
+                  <ul className="mb-4 list-disc list-inside text-base font-normal text-gray-400">
+                    <li>Learn a Design Structure {'('}Adobe Photoshop & Adobe Illustrator{')'}</li>
+                    <li>Learn a Animate Structur {'('}Adobe Animate{')'}</li>
+                    <li>Learn a Logic Code {'('}Actionscript 3.0{')'}</li>
+                    <li>Learn a 3D Concept {'('}3Ds Max{')'}</li>
+                    <li>Create a Video Music {'('}Adobe Premiere Pro & Adobe After Effect{')'}</li>
+                    <li>Create a Module Interactive {'('}Adobe Animate & Actionscript 3.0{')'}</li>
+                  </ul>
+                </li>
+                <li className="mb-10 ms-6">
+                  <span className="absolute flex items-center justify-center w-6 h-6 bg-green-800 rounded-full -start-3 ring-8 ring-green-800">
+                    <BriefcaseIcon />
+                  </span>
+                  <h3 className="flex items-center mb-1 text-xl font-semibold text-white">Web Development {'('}Yapindo Jaya Abadi{')'}</h3>
+                  <p className="block mb-2 text-sm font-normal leading-none text-gray-500">2013-2014</p>
+                  <ul className="mb-4 list-disc list-inside text-base font-normal text-gray-400">
+                    <li>Develop a Desktop App {'('}Actionscript 3.0{')'}</li>
+                    <li>Migrate a Desktop App to Android App {'('}Java{')'}</li>
+                    <li>Develop a Android App {'('}Java{')'}</li>
+                    <li>Create a Company Website {'('}HTML,CSS,Javascript{')'}</li>
+                  </ul>
+                </li>
+                <li className="mb-10 ms-6">
+                  <span className="absolute flex items-center justify-center w-6 h-6 bg-green-800 rounded-full -start-3 ring-8 ring-green-800">
+                    <AcademicCapIcon />
+                  </span>
+                  <h3 className="flex items-center mb-1 text-xl font-semibold text-white">University Indraprasta</h3>
+                  <p className="block mb-2 text-sm font-normal leading-none text-gray-500">2015</p>
+                  <ul className="mb-4 list-disc list-inside text-base font-normal text-gray-400">
+                    <li>Learn a Logic Code {'('}Java{')'}</li>
+                    <li>Learn a Website Structure {'('}HTML,CSS,Javascript{')'}</li>
+                    <li>Learn a Android App {'('}Java{')'}</li>
+                    <li>Create a Website {'('}HTML,CSS,Javascript{')'}</li>
+                    <li>Create a Android App {'('}Java{')'}</li>
+                  </ul>
+                </li>
+                <li className="mb-10 ms-6">
+                  <span className="absolute flex items-center justify-center w-6 h-6 bg-green-800 rounded-full -start-3 ring-8 ring-green-800">
+                    <BriefcaseIcon />
+                  </span>
+                  <h3 className="flex items-center mb-1 text-xl font-semibold text-white">Motion Designer {'('}Hakuhodo Jakarta{')'}</h3>
+                  <p className="block mb-2 text-sm font-normal leading-none text-gray-500">2019-2024</p>
+                  <ul className="mb-4 list-disc list-inside text-base font-normal text-gray-400">
+                    <li>Create a Motion for HTML5 Banner {'('}Google Web Designer{')'}</li>
+                    <li>Create a Motion for Sosial Media {'('}Adobe After Effect{')'}</li>
+                    <li>Create a Video for Internal Video Client {'('}Adobe Premiere Pro & Adobe After Effect{')'}</li>
+                    <li>Create a Company Website {'('}Next.js{')'}</li>
+                  </ul>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        {/* Info Section */}
+        <div className="flex flex-col md:flex-row-reverse w-full items-center gap-2">
+          <div className="basis-full md:basis-auto bg-black p-3 rounded-tr-3xl rounded-bl-3xl">
+            <p className="text-center md:text-left text-5xl font-bold mb-2">Information</p>
+            <div className="flex">
+              <EnvelopeIcon className="h-6 w-6" />
+              <span className="ml-2 font-medium">muhammadaliframadhan95@gmail.com</span>
+            </div>
+            <div className="flex">
+              <MapPinIcon className="h-6 w-6" />
+              <span className="ml-2 font-medium">Jakarta, Indonesia</span>
+            </div>
+          </div>
+        </div>
+        {/* End Section */}
       </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   );
 }
