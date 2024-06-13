@@ -20,7 +20,7 @@ export default function Home() {
         <div className="flex flex-col lg:flex-row w-full items-center gap-2">
           <div className="basis-full lg:basis-auto flex justify-center">
             <Image
-              src="/my-avatar.jpg"
+              src="/my-avatar.JPG"
               width={400}
               height={400}
               alt="My Photo"
