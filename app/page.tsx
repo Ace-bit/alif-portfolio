@@ -37,15 +37,55 @@ export default function Home() {
           <div className="basis-full md:basis-auto bg-black p-3 flex flex-col rounded-tr-3xl rounded-bl-3xl">
             <p className="text-center md:text-left text-5xl font-bold mb-2">Skill</p>
             <div className="flex flex-wrap md:flex-nowrap gap-2">
-              {logos.map((logo) => (
-              <div className="w-auto" key={logo.icon}>
-                <Icon icon={logo.icon} className="size-12 mb-1" />
+              {/* AE */}
+              <div className="w-auto">
+                <Icon icon='logos:adobe-after-effects' className="size-12 mb-1" />
                 <div className="w-full rounded-sm bg-white">
-                  <div className={`w-[${logo.size}] h-1 bg-green-700`}></div>
+                  <div className={`w-[70%] h-1 bg-green-700`}></div>
                 </div>
               </div>
-              ))}
-              
+              {/* PR */}
+              <div className="w-auto">
+                <Icon icon='logos:adobe-premiere' className="size-12 mb-1" />
+                <div className="w-full rounded-sm bg-white">
+                  <div className={`w-[40%] h-1 bg-green-700`}></div>
+                </div>
+              </div>
+              {/* PS */}
+              <div className="w-auto">
+                <Icon icon='logos:adobe-photoshop' className="size-12 mb-1" />
+                <div className="w-full rounded-sm bg-white">
+                  <div className={`w-[15%] h-1 bg-green-700`}></div>
+                </div>
+              </div>
+              {/* AI */}
+              <div className="w-auto">
+                <Icon icon='logos:adobe-illustrator' className="size-12 mb-1" />
+                <div className="w-full rounded-sm bg-white">
+                  <div className={`w-[10%] h-1 bg-green-700`}></div>
+                </div>
+              </div>
+              {/* Next */}
+              <div className="w-auto">
+                <Icon icon='logos:nextjs-icon' className="size-12 mb-1" />
+                <div className="w-full rounded-sm bg-white">
+                  <div className={`w-[45%] h-1 bg-green-700`}></div>
+                </div>
+              </div>
+              {/* Laravel */}
+              <div className="w-auto">
+                <Icon icon='logos:laravel' className="size-12 mb-1" />
+                <div className="w-full rounded-sm bg-white">
+                  <div className={`w-[15%] h-1 bg-green-700`}></div>
+                </div>
+              </div>
+              {/* Tailwind */}
+              <div className="w-auto">
+                <Icon icon='logos:tailwindcss-icon' className="size-12 mb-1" />
+                <div className="w-full rounded-sm bg-white">
+                  <div className={`w-[35%] h-1 bg-green-700`}></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
