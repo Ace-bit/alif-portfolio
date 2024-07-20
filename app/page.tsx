@@ -156,7 +156,7 @@ export default function Home() {
         </div>
         {/* Info Section */}
         <div className="flex flex-col md:flex-row-reverse w-full items-center gap-2">
-          <div className="basis-full md:basis-auto bg-black p-3 rounded-tr-3xl rounded-bl-3xl">
+          <div className="basis-full md:basis-1/2 bg-black p-3 rounded-tr-3xl rounded-bl-3xl">
             <p className="text-center md:text-left text-5xl font-bold mb-2">Information</p>
             <div className="flex">
               <EnvelopeIcon className="h-6 w-6" />
