@@ -1,5 +1,5 @@
 'use client'
- 
+
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
@@ -7,19 +7,23 @@ import {
   Bars3Icon,
   XMarkIcon,
 } from '@heroicons/react/24/solid'
-import { UserIcon } from '@heroicons/react/20/solid'
+import { DocumentIcon } from '@heroicons/react/20/solid'
 import Link from 'next/link'
- 
+import { classNames } from '../utils/classes'
+
 export function NavLinks() {
   const pathname = usePathname()
- 
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
+  
+
   return (
-    <header className="bg-transparent border-b border-white">
+    <header className="bg-transparent border-b border-white" id='tops'>
       <nav className="mx-0 md:mx-auto flex max-w-screen-2xl items-center px-8" aria-label="Global">
-        <div className="flex">
-            <UserIcon className="h-8 w-auto" />
+        <div className="flex items-center gap-1">
+            <DocumentIcon className="size-8" />
+            <p className='text-5xl font-black'>CV</p>
         </div>
         <div className="flex flex-1 justify-end md:hidden">
           <button
@@ -32,15 +36,38 @@ export function NavLinks() {
           </button>
         </div>
         <div className="hidden md:flex md:flex-1 md:justify-end">
-          <Link href="/" className={`link ${pathname === '/' ? 'p-5 text-1xl leading-6 cursor-not-allowed text-green-300' : 'p-5 text-1xl font-semibold leading-6 text-white hover:bg-green-900'}`}>
+          <Link 
+            href="/" 
+            className={classNames(
+              'p-5 text-xl font-semibold',
+              pathname === '/' ? 
+              'cursor-default text-green-300' : 
+              'text-white hover:bg-green-900'
+          )}>
             Me
           </Link>
-          <Link href="/portofolio" className={`link ${pathname === '/portofolio' ? 'p-5 text-1xl leading-6 cursor-not-allowed text-green-300' : 'p-5 text-1xl font-semibold leading-6 text-white hover:bg-green-900'}`}>
+          <Link 
+            href="/portofolio" 
+            className={classNames(
+              'p-5 text-xl font-semibold',
+              pathname === '/portofolio' ? 
+              'cursor-default text-green-300' : 
+              'text-white hover:bg-green-900'
+          )}>
             Portofolio
           </Link>
         </div>
       </nav>
-      <Dialog className="md:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+      <Transition
+        show={mobileMenuOpen}
+        enter="duration-500 ease-out"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        leave="duration-300 ease-out"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
+      >
+      <Dialog className="md:hidden" onClose={setMobileMenuOpen}>
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-2/3 overflow-y-auto bg-green-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10">
           <div className="flex items-center justify-end">
@@ -58,14 +85,22 @@ export function NavLinks() {
               <div className="space-y-2 py-6">
                 <a
                   href="/"
-                  className={`link ${pathname === '/' ? '-mx-3 block px-3 py-2 text-base font-semibold leading-7 text-white border-l' : '-mx-3 block px-3 py-2 text-base font-semibold leading-7 text-white'}`}
-                >
+                  className={classNames(
+                    '-mx-3 block px-3 py-2 text-base font-semibold leading-7 text-white',
+                    pathname === '/' ? 
+                    'border-l' : 
+                    'border-none'
+                )}>
                   Me
                 </a>
                 <a
                   href="/portofolio"
-                  className={`link ${pathname === '/portofolio' ? '-mx-3 block px-3 py-2 text-base font-semibold leading-7 text-white border-l' : '-mx-3 block px-3 py-2 text-base font-semibold leading-7 text-white'}`}
-                >
+                  className={classNames(
+                    '-mx-3 block px-3 py-2 text-base font-semibold leading-7 text-white',
+                    pathname === '/portofolio' ? 
+                    'border-l' : 
+                    'border-none'
+                )}>
                   Portofolio
                 </a>
               </div>
@@ -73,6 +108,7 @@ export function NavLinks() {
           </div>
         </Dialog.Panel>
       </Dialog>
+      </Transition>
     </header>
   )
 }

@@ -17,7 +17,7 @@ export default function Home() {
     <div className="mx-0 md:mx-auto max-w-7xl p-2">
       <div className="flex flex-wrap gap-8 mt-3">
         {/* Me Section */}
-        <div className="flex flex-col lg:flex-row w-full items-center gap-2">
+        <div className="flex flex-col lg:flex-row w-full items-center gap-3">
           <div className="basis-full lg:basis-auto flex justify-center">
             <Image
               src="/my-avatar.JPG"
@@ -29,14 +29,35 @@ export default function Home() {
           </div>
           <div className="basis-full lg:basis-auto">
             <p className="text-3xl lg:text-5xl text-center lg:text-left font-bold">Muhammad Alif Ramadhan</p>
-            <p className="text-lg lg:text-xl text-center lg:text-left font-medium">Motion Designer & Web Development</p>
+            <p className="text-lg lg:text-xl text-center lg:text-left font-medium">Web Development & Motion Designer</p>
           </div>
         </div>
         {/* Skill Section */}
         <div className="flex flex-col md:flex-row-reverse w-full items-center gap-2">
-          <div className="basis-full md:basis-auto bg-black p-3 flex flex-col rounded-tr-3xl rounded-bl-3xl">
+          <div className="basis-full md:basis-1/2 bg-black p-3 flex flex-col rounded-tr-3xl rounded-bl-3xl">
             <p className="text-center md:text-left text-5xl font-bold mb-2">Skill</p>
             <div className="flex flex-wrap md:flex-nowrap gap-2">
+              {/* Next */}
+              <div className="w-auto">
+                <Icon icon='logos:nextjs-icon' className="size-12 mb-1" />
+                <div className="w-full rounded-sm bg-white">
+                  <div className={`w-[55%] h-1 bg-green-700`}></div>
+                </div>
+              </div>
+              {/* Laravel */}
+              <div className="w-auto">
+                <Icon icon='logos:laravel' className="size-12 mb-1" />
+                <div className="w-full rounded-sm bg-white">
+                  <div className={`w-[15%] h-1 bg-green-700`}></div>
+                </div>
+              </div>
+              {/* Tailwind */}
+              <div className="w-auto">
+                <Icon icon='logos:tailwindcss-icon' className="size-12 mb-1" />
+                <div className="w-full rounded-sm bg-white">
+                  <div className={`w-[35%] h-1 bg-green-700`}></div>
+                </div>
+              </div>
               {/* AE */}
               <div className="w-auto">
                 <Icon icon='logos:adobe-after-effects' className="size-12 mb-1" />
@@ -63,27 +84,6 @@ export default function Home() {
                 <Icon icon='logos:adobe-illustrator' className="size-12 mb-1" />
                 <div className="w-full rounded-sm bg-white">
                   <div className={`w-[10%] h-1 bg-green-700`}></div>
-                </div>
-              </div>
-              {/* Next */}
-              <div className="w-auto">
-                <Icon icon='logos:nextjs-icon' className="size-12 mb-1" />
-                <div className="w-full rounded-sm bg-white">
-                  <div className={`w-[45%] h-1 bg-green-700`}></div>
-                </div>
-              </div>
-              {/* Laravel */}
-              <div className="w-auto">
-                <Icon icon='logos:laravel' className="size-12 mb-1" />
-                <div className="w-full rounded-sm bg-white">
-                  <div className={`w-[15%] h-1 bg-green-700`}></div>
-                </div>
-              </div>
-              {/* Tailwind */}
-              <div className="w-auto">
-                <Icon icon='logos:tailwindcss-icon' className="size-12 mb-1" />
-                <div className="w-full rounded-sm bg-white">
-                  <div className={`w-[35%] h-1 bg-green-700`}></div>
                 </div>
               </div>
             </div>
