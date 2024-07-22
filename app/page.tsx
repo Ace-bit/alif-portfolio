@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { AcademicCapIcon, BriefcaseIcon, EnvelopeIcon, MapPinIcon } from "@heroicons/react/24/solid";
+import { AcademicCapIcon, BriefcaseIcon, EnvelopeIcon, MapPinIcon, PhoneIcon } from "@heroicons/react/24/solid";
 import { Icon } from "@iconify/react";
 
 const logos = [
@@ -155,7 +155,7 @@ export default function Home() {
           </div>
         </div>
         {/* Info Section */}
-        <div className="flex flex-col md:flex-row-reverse w-full items-center gap-2">
+        <div className="flex flex-col md:flex-row-reverse w-full items-center gap-3">
           <div className="basis-full md:basis-1/2 bg-black p-3 rounded-tr-3xl rounded-bl-3xl">
             <p className="text-center md:text-left text-5xl font-bold mb-2">Information</p>
             <div className="flex">
@@ -164,7 +164,11 @@ export default function Home() {
             </div>
             <div className="flex">
               <MapPinIcon className="h-6 w-6" />
-              <span className="ml-2 font-medium">Jakarta, Indonesia</span>
+              <span className="ml-2 font-medium">Komplek PU Jl. Suhodo III/87 RT.003/010, Pondok Pinang, Kebayoran Lama, Kota Jakarta Selatan, 12310.</span>
+            </div>
+            <div className="flex">
+              <PhoneIcon className="h-6 w-6" />
+              <span className="ml-2 font-medium">0858-8196-2122</span>
             </div>
           </div>
         </div>
