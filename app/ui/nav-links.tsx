@@ -23,7 +23,7 @@ export function NavLinks() {
       <nav className="mx-0 md:mx-auto flex max-w-screen-2xl items-center px-8" aria-label="Global">
         <div className="flex items-center gap-1">
             <DocumentIcon className="size-8" />
-            <p className='text-5xl font-black'>CV</p>
+            <p className='text-5xl font-black'></p>
         </div>
         <div className="flex flex-1 justify-end md:hidden">
           <button
