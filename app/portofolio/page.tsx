@@ -42,7 +42,7 @@ export default function Page(){
             <TabGroup>
                 <TabList className="flex items-center justify-center gap-1">
                     <Tab className="p-2 data-[selected]:border-b data-[selected]:text-green-500 focus:outline-none">Motion</Tab>
-                    {/*<Tab className="p-2 data-[selected]:border-b data-[selected]:text-green-500 focus:outline-none">Motion</Tab>*/}
+                    <Tab className="p-2 data-[selected]:border-b data-[selected]:text-green-500 focus:outline-none">Web</Tab>
                 </TabList>
                 <TabPanels>
                 <TabPanel>
