@@ -41,35 +41,14 @@ export default function Page(){
             {/* Section Zurich */}
             <TabGroup>
                 <TabList className="flex items-center justify-center gap-1">
+                    <Tab className="p-2 data-[selected]:border-b data-[selected]:text-green-500 focus:outline-none">App</Tab>
                     <Tab className="p-2 data-[selected]:border-b data-[selected]:text-green-500 focus:outline-none">Motion</Tab>
-                    <Tab className="p-2 data-[selected]:border-b data-[selected]:text-green-500 focus:outline-none">Web</Tab>
                 </TabList>
                 <TabPanels>
-                <TabPanel>
-                        <p className='mt-7 text-center text-sm italic font-thin drop-shadow-xl'>{'*'}Click the image to show content</p>
-                        <h1 className='mt-2 border-b text-5xl font-bold'>Zurich</h1>
-                        <div className="columns-xs mt-3 gap-8 space-y-4">
-                            {data_zurich.map((item) => (
-                                <div key={item.btitle} className="w-full"><PortoModal bsrc={item.bsrc} btitle={item.btitle} dtype={item.dtype} dsrc={item.dsrc} dw={item.dw} dh={item.dh} dtitle={item.dtitle}/></div>
-                            ))}
-                        </div>
-                        <h1 className='mt-7 border-b text-5xl font-bold'>OLX</h1>
-                        <div className="columns-xs mt-3 gap-8 space-y-4">
-                            {data_olx.map((item) => (
-                                <div key={item.btitle} className="w-full"><PortoModal bsrc={item.bsrc} btitle={item.btitle} dtype={item.dtype} dsrc={item.dsrc} dw={item.dw} dh={item.dh} dtitle={item.dtitle}/></div>
-                            ))}
-                        </div>
-                        <h1 className='mt-7 border-b text-5xl font-bold'>JCB</h1>
-                        <div className="columns-xs mt-3 gap-8 space-y-4">
-                            {data_jcb.map((item) => (
-                                <div key={item.btitle} className="w-full"><PortoModal bsrc={item.bsrc} btitle={item.btitle} dtype={item.dtype} dsrc={item.dsrc} dw={item.dw} dh={item.dh} dtitle={item.dtitle}/></div>
-                            ))}
-                        </div>
-                    </TabPanel>
                     <TabPanel>
                         <p className='mt-7 text-center text-sm italic font-thin drop-shadow-xl'>{'*'}Click the image to show content</p>
-                        <h1 className='mt-2 border-b text-5xl font-bold'>Freelance</h1>
-                        <div className="columns-xs mt-3 gap-8 space-y-4">
+                        <h1 className='mt-2 border-b text-5xl font-bold'>Website</h1>
+                        <div className="grid grid-cols-3 mt-3 gap-8 space-y-4">
                             <a 
                                 href='https://shoes-universe-store.vercel.app/'
                                 target='blank'
@@ -96,13 +75,53 @@ export default function Page(){
                                     width={500} 
                                     height={500} 
                                     alt="fnb" 
-                                    className="group-hover:grayscale object-cover"
+                                    className="group-hover:grayscale"
                                 />
                                 <div className="absolute bottom-0 md:hidden group-hover:block w-full p-4 text-center align-middle text-xl font-medium drop-shadow-xl bg-green-700/90">
                                     F&B System Management
                                 </div>
                             </a>
                             {data_free.map((item) => (
+                                <div key={item.btitle} className="w-full"><PortoModal bsrc={item.bsrc} btitle={item.btitle} dtype={item.dtype} dsrc={item.dsrc} dw={item.dw} dh={item.dh} dtitle={item.dtitle}/></div>
+                            ))}
+                        </div>
+                        <h1 className='mt-7 border-b text-5xl font-bold'>Mobile</h1>
+                        <div className="grid grid-cols-3 mt-3 gap-8 space-y-4">
+                            <a 
+                                href='https://drive.google.com/file/d/11U56VNNTk5iwQsb_DakjLYLhByRFR3Gc/view?usp=sharing'
+                                target='blank'
+                                className="relative group w-full aspect-square flex items-center justify-center bg-black"
+                            >
+                                <Image 
+                                    src="/portofolio/freelance/thumbnails/5.jpg"
+                                    width={500} 
+                                    height={500} 
+                                    alt="fnb" 
+                                    className="group-hover:grayscale object-contain"
+                                />
+                                <div className="absolute bottom-0 md:hidden group-hover:block w-full p-4 text-center align-middle text-xl font-medium drop-shadow-xl bg-green-700/90">
+                                    F&B System Management - Android
+                                </div>
+                            </a>
+                        </div>
+                    </TabPanel>
+                    <TabPanel>
+                        <p className='mt-7 text-center text-sm italic font-thin drop-shadow-xl'>{'*'}Click the image to show content</p>
+                        <h1 className='mt-2 border-b text-5xl font-bold'>Zurich</h1>
+                        <div className="columns-xs mt-3 gap-8 space-y-4">
+                            {data_zurich.map((item) => (
+                                <div key={item.btitle} className="w-full"><PortoModal bsrc={item.bsrc} btitle={item.btitle} dtype={item.dtype} dsrc={item.dsrc} dw={item.dw} dh={item.dh} dtitle={item.dtitle}/></div>
+                            ))}
+                        </div>
+                        <h1 className='mt-7 border-b text-5xl font-bold'>OLX</h1>
+                        <div className="columns-xs mt-3 gap-8 space-y-4">
+                            {data_olx.map((item) => (
+                                <div key={item.btitle} className="w-full"><PortoModal bsrc={item.bsrc} btitle={item.btitle} dtype={item.dtype} dsrc={item.dsrc} dw={item.dw} dh={item.dh} dtitle={item.dtitle}/></div>
+                            ))}
+                        </div>
+                        <h1 className='mt-7 border-b text-5xl font-bold'>JCB</h1>
+                        <div className="columns-xs mt-3 gap-8 space-y-4">
+                            {data_jcb.map((item) => (
                                 <div key={item.btitle} className="w-full"><PortoModal bsrc={item.bsrc} btitle={item.btitle} dtype={item.dtype} dsrc={item.dsrc} dw={item.dw} dh={item.dh} dtitle={item.dtitle}/></div>
                             ))}
                         </div>
