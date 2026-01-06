@@ -86,6 +86,22 @@ export default function Page(){
                                     E-Commerce
                                 </div>
                             </a>
+                            <a 
+                                href='https://gurihgurih-next15.vercel.app/'
+                                target='blank'
+                                className="relative group w-full aspect-square flex items-center justify-center bg-black"
+                            >
+                                <Image 
+                                    src="/portofolio/freelance/thumbnails/4.png"
+                                    width={500} 
+                                    height={500} 
+                                    alt="fnb" 
+                                    className="group-hover:grayscale object-cover"
+                                />
+                                <div className="absolute bottom-0 md:hidden group-hover:block w-full p-4 text-center align-middle text-xl font-medium drop-shadow-xl bg-green-700/90">
+                                    F&B System Management
+                                </div>
+                            </a>
                             {data_free.map((item) => (
                                 <div key={item.btitle} className="w-full"><PortoModal bsrc={item.bsrc} btitle={item.btitle} dtype={item.dtype} dsrc={item.dsrc} dw={item.dw} dh={item.dh} dtitle={item.dtitle}/></div>
                             ))}
